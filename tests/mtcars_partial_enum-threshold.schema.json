@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "description": "Description of tests/mtcars_partial.csv",
+  "properties": {
+    "car_model": {
+      "description": "Description for column car_model",
+      "type": "string"
+    },
+    "const_col": {
+      "const": "A",
+      "description": "Description for column const_col"
+    },
+    "displacement": {
+      "description": "Description for column displacement",
+      "enum": [
+        71.1,
+        75.7,
+        78.7,
+        79.0,
+        95.1,
+        108.0,
+        120.1,
+        120.3,
+        121.0,
+        140.8,
+        145.0,
+        146.7,
+        160.0,
+        167.6,
+        225.0,
+        258.0,
+        275.8,
+        301.0,
+        304.0,
+        318.0,
+        350.0,
+        351.0,
+        360.0,
+        400.0,
+        440.0,
+        460.0,
+        472.0
+      ]
+    },
+    "driveshaft_ratio": {
+      "description": "Description for column driveshaft_ratio",
+      "enum": [
+        2.76,
+        2.93,
+        3.0,
+        3.07,
+        3.08,
+        3.15,
+        3.21,
+        3.23,
+        3.54,
+        3.62,
+        3.69,
+        3.7,
+        3.73,
+        3.77,
+        3.85,
+        3.9,
+        3.92,
+        4.08,
+        4.11,
+        4.22,
+        4.43,
+        4.93
+      ]
+    },
+    "engine_shape": {
+      "description": "Description for column engine_shape",
+      "enum": [
+        "straight line",
+        "v-shaped"
+      ]
+    },
+    "horsepower": {
+      "description": "Description for column horsepower",
+      "enum": [
+        52,
+        62,
+        65,
+        66,
+        91,
+        93,
+        95,
+        97,
+        105,
+        109,
+        110,
+        113,
+        123,
+        150,
+        175,
+        180,
+        205,
+        215,
+        230,
+        245,
+        264,
+        335
+      ]
+    },
+    "miles_per_gallons": {
+      "description": "Description for column miles_per_gallons",
+      "enum": [
+        10.4,
+        13.3,
+        14.3,
+        14.7,
+        15.0,
+        15.2,
+        15.5,
+        15.8,
+        16.4,
+        17.3,
+        17.8,
+        18.1,
+        18.7,
+        19.2,
+        19.7,
+        21.0,
+        21.4,
+        21.5,
+        22.8,
+        24.4,
+        26.0,
+        27.3,
+        30.4,
+        32.4,
+        33.9
+      ]
+    },
+    "number_carburetors": {
+      "description": "Description for column number_carburetors",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8
+      ]
+    },
+    "number_gears": {
+      "description": "Description for column number_gears",
+      "enum": [
+        3,
+        4,
+        5
+      ]
+    },
+    "number_of_cylinders": {
+      "description": "Description for column number_of_cylinders",
+      "enum": [
+        4,
+        6,
+        8
+      ]
+    },
+    "quarter_mile_seconds_acceleration": {
+      "description": "Description for column quarter_mile_seconds_acceleration",
+      "enum": [
+        14.5,
+        14.6,
+        15.41,
+        15.5,
+        15.84,
+        16.46,
+        16.7,
+        16.87,
+        16.9,
+        17.02,
+        17.05,
+        17.3,
+        17.4,
+        17.42,
+        17.6,
+        17.82,
+        17.98,
+        18.0,
+        18.3,
+        18.52,
+        18.6,
+        18.61,
+        18.9,
+        19.44,
+        19.47,
+        19.9,
+        20.0,
+        20.01,
+        20.22,
+        22.9
+      ]
+    },
+    "transmission": {
+      "description": "Description for column transmission",
+      "enum": [
+        "automatic",
+        "manual"
+      ]
+    },
+    "weight": {
+      "description": "Description for column weight",
+      "enum": [
+        1.513,
+        1.615,
+        1.835,
+        1.935,
+        2.14,
+        2.2,
+        2.32,
+        2.465,
+        2.62,
+        2.77,
+        2.78,
+        2.875,
+        3.15,
+        3.17,
+        3.19,
+        3.215,
+        3.435,
+        3.44,
+        3.46,
+        3.52,
+        3.57,
+        3.73,
+        3.78,
+        3.84,
+        3.845,
+        4.07,
+        5.25,
+        5.345,
+        5.424
+      ]
+    }
+  },
+  "required": [
+    "const_col",
+    "car_model",
+    "miles_per_gallons",
+    "number_of_cylinders",
+    "displacement",
+    "driveshaft_ratio",
+    "weight",
+    "quarter_mile_seconds_acceleration",
+    "transmission",
+    "number_gears",
+    "number_carburetors"
+  ],
+  "title": "JSON Schema for tests/mtcars_partial.csv"
+}

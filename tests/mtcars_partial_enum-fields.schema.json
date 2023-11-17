@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "description": "Description of tests/mtcars_partial.csv",
+  "properties": {
+    "car_model": {
+      "description": "Description for column car_model",
+      "enum": [
+        "AMC Javelin",
+        "Cadillac Fleetwood",
+        "Camaro Z28",
+        "Chrysler Imperial",
+        "Datsun 710",
+        "Dodge Challenger",
+        "Duster 360",
+        "Ferrari Dino",
+        "Fiat 128",
+        "Fiat X1-9",
+        "Ford Pantera L",
+        "Honda Civic",
+        "Hornet 4 Drive",
+        "Hornet Sportabout",
+        "Lincoln Continental",
+        "Lotus Europa",
+        "Maserati Bora",
+        "Mazda RX4",
+        "Mazda RX4 Wag",
+        "Merc 230",
+        "Merc 240D",
+        "Merc 280",
+        "Merc 280C",
+        "Merc 450SE",
+        "Merc 450SL",
+        "Merc 450SLC",
+        "Pontiac Firebird",
+        "Porsche 914-2",
+        "Toyota Corolla",
+        "Toyota Corona",
+        "Valiant",
+        "Volvo 142E"
+      ]
+    },
+    "const_col": {
+      "const": "A",
+      "description": "Description for column const_col"
+    },
+    "displacement": {
+      "description": "Description for column displacement",
+      "maximum": 472.0,
+      "minimum": 71.1,
+      "type": [
+        "integer",
+        "number"
+      ]
+    },
+    "driveshaft_ratio": {
+      "description": "Description for column driveshaft_ratio",
+      "maximum": 4.93,
+      "minimum": 2.76,
+      "type": [
+        "integer",
+        "number"
+      ]
+    },
+    "engine_shape": {
+      "description": "Description for column engine_shape",
+      "enum": [
+        "straight line",
+        "v-shaped"
+      ]
+    },
+    "horsepower": {
+      "description": "Description for column horsepower",
+      "maximum": 335,
+      "minimum": 52,
+      "type": "integer"
+    },
+    "miles_per_gallons": {
+      "description": "Description for column miles_per_gallons",
+      "maximum": 33.9,
+      "minimum": 10.4,
+      "type": [
+        "integer",
+        "number"
+      ]
+    },
+    "number_carburetors": {
+      "description": "Description for column number_carburetors",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8
+      ]
+    },
+    "number_gears": {
+      "description": "Description for column number_gears",
+      "enum": [
+        3,
+        4,
+        5
+      ]
+    },
+    "number_of_cylinders": {
+      "description": "Description for column number_of_cylinders",
+      "enum": [
+        4,
+        6,
+        8
+      ]
+    },
+    "quarter_mile_seconds_acceleration": {
+      "description": "Description for column quarter_mile_seconds_acceleration",
+      "maximum": 22.9,
+      "minimum": 14.5,
+      "type": [
+        "integer",
+        "number"
+      ]
+    },
+    "transmission": {
+      "description": "Description for column transmission",
+      "enum": [
+        "automatic",
+        "manual"
+      ]
+    },
+    "weight": {
+      "description": "Description for column weight",
+      "maximum": 5.424,
+      "minimum": 1.513,
+      "type": "number"
+    }
+  },
+  "required": [
+    "const_col",
+    "car_model",
+    "miles_per_gallons",
+    "number_of_cylinders",
+    "displacement",
+    "driveshaft_ratio",
+    "weight",
+    "quarter_mile_seconds_acceleration",
+    "transmission",
+    "number_gears",
+    "number_carburetors"
+  ],
+  "title": "JSON Schema for tests/mtcars_partial.csv"
+}
