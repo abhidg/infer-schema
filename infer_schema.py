@@ -115,7 +115,9 @@ def infer_schema(
     jsonschema["description"] = "Description of " + file
     jsonschema["required"] = [c for c in unique_values if c not in has_nulls]
     for c in unique_values:
-        if len(unique_values[c]) == 1:
+        if not unique_values[c]:
+            properties[c] = {"type": "null"}
+        elif len(unique_values[c]) == 1:
             const_val = list(unique_values[c])[0]
             if const_val in NULL_VALUES:
                 properties[c] = {"type": "null"}
