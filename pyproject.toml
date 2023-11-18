@@ -16,10 +16,13 @@ readme = "README.md"
 classifiers = ["License :: OSI Approved :: MIT License"]
 
 [project.optional-dependencies]
-test = ["fastjsonschema==2.19.0"]
+test = ["fastjsonschema==2.19.0", "coverage[toml]"]
 
 [project.urls]
 Home = "https://github.com/abhidg/infer-schema"
 
 [project.scripts]
 infer-schema = "infer_schema:main"
+
+[tool.coverage.run]
+omit = ["tests/*", "test_*"]
