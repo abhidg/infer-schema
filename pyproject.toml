@@ -1,0 +1,25 @@
+[build-system]
+requires = ["flit_core >=3.9,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.module]
+name = "infer_schema"
+
+[project]
+name = "infer-schema"
+version = "0.1"
+description = "Infer JSON schema from CSV file"
+authors = [{ name = "Abhishek Dasgupta", email = "abhidg@trenozoic.net" }]
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+readme = "README.md"
+classifiers = ["License :: OSI Approved :: MIT License"]
+
+[project.optional-dependencies]
+test = ["fastjsonschema==2.19.0"]
+
+[project.urls]
+Home = "https://github.com/abhidg/infer-schema"
+
+[project.scripts]
+infer-schema = "infer_schema:main"
