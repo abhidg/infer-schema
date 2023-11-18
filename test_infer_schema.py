@@ -85,7 +85,7 @@ def validate_csv(file: str, jsonschema_file: str, explicit_nulls: bool = False) 
         for row in reader:
             try:
                 validate(
-                    crow := casted_row(
+                    casted_row(
                         row,
                         integer_columns,
                         numeric_columns,
