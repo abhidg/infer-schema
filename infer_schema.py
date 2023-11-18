@@ -26,10 +26,7 @@ def _detect_type(val: str) -> DType:
         datetime.strptime(val, "%Y-%m-%d")
         return "string:date"
     with suppress(ValueError):
-        datetime.strptime(val, "%Y-%m-%dT%H:%M:%S")
-        return "string:date-time"
-    with suppress(ValueError):
-        datetime.strptime(val, "%Y-%m-%d %H:%M:%S")
+        datetime.strptime(val, "%Y-%m-%dT%H:%M:%S%z")
         return "string:date-time"
     return "string"
 

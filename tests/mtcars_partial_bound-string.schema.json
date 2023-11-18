@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "description": "Description of tests/mtcars_partial.csv",
+  "properties": {
+    "car_model": {
+      "description": "Description for column car_model",
+      "maxLength": 19,
+      "minLength": 7,
+      "type": "string"
+    },
+    "const_col": {
+      "const": "A",
+      "description": "Description for column const_col"
+    },
+    "displacement": {
+      "description": "Description for column displacement",
+      "type": [
+        "integer",
+        "number"
+      ]
+    },
+    "driveshaft_ratio": {
+      "description": "Description for column driveshaft_ratio",
+      "type": [
+        "integer",
+        "number"
+      ]
+    },
+    "engine_shape": {
+      "description": "Description for column engine_shape",
+      "enum": [
+        "straight line",
+        "v-shaped"
+      ]
+    },
+    "horsepower": {
+      "description": "Description for column horsepower",
+      "type": "integer"
+    },
+    "miles_per_gallons": {
+      "description": "Description for column miles_per_gallons",
+      "type": [
+        "integer",
+        "number"
+      ]
+    },
+    "number_carburetors": {
+      "description": "Description for column number_carburetors",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8
+      ]
+    },
+    "number_gears": {
+      "description": "Description for column number_gears",
+      "enum": [
+        3,
+        4,
+        5
+      ]
+    },
+    "number_of_cylinders": {
+      "description": "Description for column number_of_cylinders",
+      "enum": [
+        4,
+        6,
+        8
+      ]
+    },
+    "quarter_mile_seconds_acceleration": {
+      "description": "Description for column quarter_mile_seconds_acceleration",
+      "type": [
+        "integer",
+        "number"
+      ]
+    },
+    "transmission": {
+      "description": "Description for column transmission",
+      "enum": [
+        "automatic",
+        "manual"
+      ]
+    },
+    "weight": {
+      "description": "Description for column weight",
+      "type": "number"
+    }
+  },
+  "required": [
+    "const_col",
+    "car_model",
+    "miles_per_gallons",
+    "number_of_cylinders",
+    "displacement",
+    "driveshaft_ratio",
+    "weight",
+    "quarter_mile_seconds_acceleration",
+    "transmission",
+    "number_gears",
+    "number_carburetors"
+  ],
+  "title": "JSON Schema for tests/mtcars_partial.csv"
+}

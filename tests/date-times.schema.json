@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "description": "Description of tests/date-times.csv",
+  "properties": {
+    "num_cases": {
+      "description": "Description for column num_cases",
+      "maximum": 99,
+      "minimum": 2,
+      "type": "integer"
+    },
+    "time": {
+      "description": "Description for column time",
+      "format": "date-time",
+      "type": "string"
+    }
+  },
+  "required": [],
+  "title": "JSON Schema for tests/date-times.csv"
+}

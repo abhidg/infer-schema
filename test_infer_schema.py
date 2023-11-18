@@ -3,7 +3,7 @@ import copy
 import csv
 import unittest
 from typing import Dict, Any, Union, List
-from infer_schema import infer_schema, NULL_VALUES
+from infer_schema import infer_schema, NULL_VALUES, _detect_type
 
 import fastjsonschema
 
@@ -25,6 +25,13 @@ TEST_CASES = [
         "tests/mtcars_partial_bound-types.schema.json",
         dict(bound_types=set()),
     ),
+    (
+        "tests/mtcars_partial.csv",
+        "tests/mtcars_partial_bound-string.schema.json",
+        dict(bound_types={"string"}),
+    ),
+    ("tests/dates.csv", "tests/dates.schema.json", dict()),
+    ("tests/date-times.csv", "tests/date-times.schema.json", dict()),
 ]
 
 
@@ -93,6 +100,7 @@ def validate_csv(file: str, jsonschema_file: str, explicit_nulls: bool = False) 
                     )
                 )
             except fastjsonschema.JsonSchemaException as e:
+                print(row)
                 print(e.message)
                 return False
     return True
@@ -119,3 +127,8 @@ class ValidationTest(unittest.TestCase):
             ),
             True,
         )
+
+
+class TypeTest(unittest.TestCase):
+    def test_detect_type(self):
+        self.assertEqual(_detect_type("N/A"), "null")
