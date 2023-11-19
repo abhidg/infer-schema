@@ -4,27 +4,33 @@ Infer JSON schema from CSV files.
 
 ## Installation
 
-The best way to install is via `pipx`:
+The script can be installed via pip
 
 ```shell
-pipx install infer-schema
+pip install infer-schema
 ```
 
-Currently, infer-schema is a single script without any external dependencies, so
-you can download and move it to somewhere in your PATH (remember to set
-executable bit using `chmod +x`).
+Currently, infer-schema is a single Python 3 script without any external
+dependencies, so you can download it to somewhere in your PATH and make it
+executable:
+
+```shell
+curl https://raw.githubusercontent.com/abhidg/infer-schema/main/infer_schema.py -o infer-schema
+chmod +x infer-schema
+./infer-schema file
+```
 
 ## Usage
 
-infer-schema should work out of the box with any CSV file. There are a few
-options that help you to tune the schema detection based on the specifics of our
-data.
+See [infer-schema(1)](infer-schema.1.scd)
+(from a local clone, use `man ./infer-schema.1`)
 
-* **`--enum-threshold`**: Threshold of unique items up to which enum categories
-  should be populated in the JSON schema, default = 10
-* **`--enum-fields`**: Forces a certain field to be classed as an enum, useful
-  for including fields that do not meet `enum-threshold` criteria
-* **`--bound-types`**: Types for which bounds should be encoded into the schema,
-  default is numbers, for which minimum / maximum are determined. For strings
-  minLength and maxLength are determined.Set `--bound-types=none` to disable
-  bound detection
+## Development
+
+Install pre-commit to setup ruff linting and formatting.
+
+To generate the man page, [scdoc](https://git.sr.ht/~sircmpwn/scdoc) is required:
+
+```shell
+scdoc < infer-schema.1.scd > infer-schema.1
+```
