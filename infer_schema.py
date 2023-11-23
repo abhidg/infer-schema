@@ -5,7 +5,7 @@ import argparse
 from datetime import datetime
 from collections import defaultdict
 from contextlib import suppress
-from typing import Union, List, Dict, Any, Literal, Set
+from typing import Union, List, Dict, Any, Literal, Set, Optional, Sequence
 from pathlib import Path
 
 DType = Literal[
@@ -158,7 +158,7 @@ def infer_schema(
     return jsonschema
 
 
-def main():
+def main(cmd_args: Optional[Sequence[str]] = None):
     parser = argparse.ArgumentParser(description="Infer JSON schema from CSV")
     parser.add_argument("filename", help="Filename to infer schema for")
     parser.add_argument(
@@ -187,7 +187,7 @@ def main():
         action="store_true",
     )
     parser.add_argument("-o", "--output", help="Save schema to file")
-    args = parser.parse_args()
+    args = parser.parse_args(cmd_args)
     enum_fields = [] if args.enum_fields is None else args.enum_fields.split(",")
     bound_types = (
         {"integer", "number"}

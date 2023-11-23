@@ -3,7 +3,9 @@ import copy
 import csv
 import unittest
 from typing import Dict, Any, Union, List
-from infer_schema import infer_schema, NULL_VALUES, _detect_type
+from unittest.mock import patch
+from io import StringIO
+from infer_schema import infer_schema, NULL_VALUES, _detect_type, main
 
 import fastjsonschema
 
@@ -132,3 +134,12 @@ class ValidationTest(unittest.TestCase):
 class TypeTest(unittest.TestCase):
     def test_detect_type(self):
         self.assertEqual(_detect_type("N/A"), "null")
+
+
+class MainTest(unittest.TestCase):
+    def test_main(self):
+        with patch("sys.stdout", new=StringIO()) as out:
+            main(["tests/dates.csv"])
+            self.assertEqual(
+                json.loads(out.getvalue()), read_json("tests/dates.schema.json")
+            )
