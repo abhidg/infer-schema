@@ -87,9 +87,11 @@ def infer_schema(
     properties = {}
 
     # Read header
+    n_records = 0
     with open(file) as fp:
         reader = csv.DictReader(fp)
         for row in reader:
+            n_records += 1
             for column in row:
                 unique_values[column].add(row[column])
     has_nulls = set(c for c in unique_values if unique_values[c] & NULL_VALUES)
@@ -124,7 +126,9 @@ def infer_schema(
                 properties[c] = {"type": "null"}
             else:
                 properties[c] = {"const": const_val}
-        elif c in enum_fields or 1 < len(unique_values[c]) <= enum_threshold:
+        elif (
+            c in enum_fields or 1 < len(unique_values[c]) <= enum_threshold < n_records
+        ):
             if c in integer_columns or c in numeric_columns:
                 properties[c] = {"enum": sorted(unique_numeric_values[c])}
             else:
